@@ -23,8 +23,8 @@ public class SocketIOServer {
         SocketConfig socketConfig = config.getSocketConfig();
         socketConfig.setReuseAddress(true);
 
-        config.setHostname("127.0.0.1");
-        config.setPort(9092);
+        config.setHostname("0.0.0.0");
+        config.setPort(9099);
 
         server = new com.corundumstudio.socketio.SocketIOServer(config);
 
@@ -57,7 +57,7 @@ public class SocketIOServer {
 
         cleanDirectory(processed);
 
-        int fps = 25;
+        int fps = 15;
 
         ScreenshotMonitor monitor = new ScreenshotMonitor();
         Consumer<File> fileConsumer = new Consumer<File>() {
