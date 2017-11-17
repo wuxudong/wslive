@@ -33,7 +33,7 @@ public class ImageDiffer {
             }
 
             System.out.println("diff is " + diff);
-            if (diff > 8 * lastData.length * lastData[0].length) {
+            if (diff > 4 * lastData.length * lastData[0].length) {
                 result = true;
             } else {
                 result = false;

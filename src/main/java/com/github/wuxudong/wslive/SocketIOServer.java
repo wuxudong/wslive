@@ -57,7 +57,7 @@ public class SocketIOServer {
 
         cleanDirectory(processed);
 
-        int fps = 15;
+        int fps = 24;
 
         ScreenshotMonitor monitor = new ScreenshotMonitor();
         Consumer<File> fileConsumer = new Consumer<File>() {
