@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+
+    <title>Demo Chat</title>
+
+    <link href="bootstrap.css" rel="stylesheet">
+
+    <style>
+		body {
+			padding:20px;
+		}
+		#console {
+			height: 400px;
+			overflow: auto;
+		}
+		.username-msg {color:orange;}
+		.connect-msg {color:green;}
+		.disconnect-msg {color:red;}
+		.send-msg {color:#888}
+	</style>
+
+
+    <script src="js/socket.io/socket.io.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+
+</head>
+
+<body>
+
+player.
+<br/>
+<br/>
+
+
+<div id="img-container">
+    <img src="" id="player" />
+</div>
+
+
+<script>
+
+        var img = window.document.getElementById("player");
+
+		var socket =  io.connect('http://localhost:9092');
+
+		socket.on('connect', function() {
+			console.log('socketio client connected');
+		});
+
+		socket.on('error', (error) => {
+  			console.log(error);
+        });
+
+		socket.on('msg', function(evt) {
+		    console.log("new msg");
+            var v = window.URL.createObjectURL(new Blob([new Uint8Array(evt)]));
+            console.log(v)
+            img.src = v;
+		});
+
+</script>
+
+</body>
+
+</html>
